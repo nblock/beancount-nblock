@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="beancount-nblock",
-    version="0.0.1.dev0",
+    version="0.0.1",
     description="A collection of beancount plugins",
     author="Florian Preinstorfer",
     author_email="nblock@archlinux.us",
