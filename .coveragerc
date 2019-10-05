@@ -22,3 +22,6 @@ exclude_lines =
     raise AssertionError
     raise NotImplementedError
     return NotImplemented
+
+# Skip fully covered files
+skip_covered = True

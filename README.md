@@ -30,3 +30,27 @@ be configured via:
 ```
 plugin "beancount_nblock.unlinked_documents" "PATTERN-FOO-*,PATTERN-BAR-*
 ```
+
+## repel: avoid specific combinations of tags and accounts in a single transaction
+Check for combinations of tag and account names and raise an error in case they
+occur together in a transaction.
+
+Consider the tag/account pair `(FOO, Assets:Checking)` where `FOO` is a tag and
+`Assets:Checking` is an account name. The following transaction is flagged by
+the plugin:
+
+```
+2019-01-01 * "Payee" "A description" #FOO
+  Assets:Checking     300.00 EUR
+  Expenses:Home
+```
+
+### Usage
+Add the following to your beancount file:
+```
+plugin "beancount_nblock.repel" "PLUGIN CONFIGURATION"
+```
+
+where `PLUGIN CONFIGURATION` is a list of tag/account tuples such as `"[('FOO',
+'Assets:Checking')]"`. The tag `FOO` should not occur in the same transaction as
+the account `Assets:Checking`.
