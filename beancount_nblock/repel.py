@@ -4,7 +4,7 @@ from beancount.core import data
 
 from beancount_nblock.common import Error
 
-__plugins__ = ["repel"]
+__plugins__ = ("repel",)
 
 
 def parse_configuration(config_str):

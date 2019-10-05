@@ -3,12 +3,9 @@ import fnmatch
 
 from beancount.core import data
 
-__plugins__ = ["unlinked_documents"]
+from beancount_nblock.common import Error
 
-
-UnlinkedDocumentError = collections.namedtuple(
-    "UnlinkedDocumentError", ["source", "message", "entry"]
-)
+__plugins__ = ("unlinked_documents",)
 
 
 # Default list of patterns a link should start with to be considered.
@@ -22,9 +19,7 @@ def parse_patterns(config_str):
 def generate_error(link, values, description):
     try:
         single = values[0]
-        return UnlinkedDocumentError(
-            single.meta, f"Missing {description} for link {link!r}", single
-        )
+        return Error(single.meta, f"Missing {description} for link {link!r}", single)
     except IndexError:
         pass
 
