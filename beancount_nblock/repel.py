@@ -36,7 +36,7 @@ def repel(entries, options_map, config_str=None):
                     Error(
                         entry.meta,
                         f"The tag {tag!r} and the account {account!r} should not "
-                        + f"occur in the same transaction.",
+                        + "occur in the same transaction.",
                         entry,
                     )
                 )
