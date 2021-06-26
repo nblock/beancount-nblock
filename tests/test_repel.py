@@ -4,6 +4,7 @@ import pytest
 from beancount.loader import load_file
 
 from beancount_nblock.repel import repel
+
 from tests.utils import build_error
 
 FIXTURES = Path("tests/fixtures/repel")

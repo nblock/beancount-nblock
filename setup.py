@@ -15,7 +15,6 @@ setup(
     packages=["beancount_nblock"],
     install_requires=["beancount"],
     extras_require={
-        "style": ["black", "flake8", "isort"],
-        "test": ["pytest", "pytest-cov", "pytest-randomly", "pytest-xdist"],
+        "test": ["pytest", "pytest-cov", "pytest-randomly"],
     },
 )
