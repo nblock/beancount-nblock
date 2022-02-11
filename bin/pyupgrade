@@ -3,4 +3,4 @@
 set -e
 set -u
 
-find src/ tests/ -name '*.py' -print0 | xargs --null pyupgrade --py39-plus $@
+find src/ tests/ -name '*.py' -print0 | xargs --null pyupgrade --py310-plus $@
