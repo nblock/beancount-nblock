@@ -58,5 +58,9 @@ exclude_lines = [
   "if __name__ == .__main__.:",
 ]
 
+# pytest
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 # setuptools_scm
 [tool.setuptools_scm]
