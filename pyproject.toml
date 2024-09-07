@@ -20,8 +20,8 @@ Repository = "https://github.com/nblock/beancount-nblock"
 
 [project.optional-dependencies]
 test = [
+  "coverage",
   "pytest",
-  "pytest-cov",
   "pytest-randomly",
 ]
 
