@@ -1,6 +1,0 @@
-#!/bin/sh
-# Run pyupgrade (within tox)
-set -e
-set -u
-
-find src/ tests/ -name '*.py' -print0 | xargs --null pyupgrade --py310-plus $@
