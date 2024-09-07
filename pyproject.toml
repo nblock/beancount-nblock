@@ -10,7 +10,7 @@ readme = "README.md"
 authors = [
   {name = "Florian Preinstorfer", email = "nblock@archlinux.us"},
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
   "beancount>=2,<3",
 ]
