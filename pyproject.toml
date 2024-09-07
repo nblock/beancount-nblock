@@ -25,5 +25,38 @@ test = [
   "pytest-randomly",
 ]
 
+# coverage: paths
+[tool.coverage.paths]
+source = [
+  "src",
+  ".tox/*/lib/python*/site-packages/beancount_nblock",
+]
+
+# coverage: run
+[tool.coverage.run]
+branch = true
+source = [
+  "beancount_nblock",
+  "tests",
+]
+
+# coverage: report
+[tool.coverage.report]
+skip_covered = true
+exclude_lines = [
+  # Have to re-enable the standard pragma
+  "pragma: no cover",
+
+  # Don't complain about missing debug-only code:
+  "def __repr__",
+
+  # Don't complain if tests don't hit defensive assertion code:
+  "assert_never\\(",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "return NotImplemented",
+  "if __name__ == .__main__.:",
+]
+
 # setuptools_scm
 [tool.setuptools_scm]
