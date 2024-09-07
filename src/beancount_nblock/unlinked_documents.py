@@ -47,7 +47,7 @@ def unlinked_documents(entries, options_map, config_str=None):
         patterns = parse_patterns(config_str)
 
     for entry in entries:
-        if not isinstance(entry, (data.Document, data.Transaction)):
+        if not isinstance(entry, data.Document | data.Transaction):
             continue
 
         for link in entry.links:
