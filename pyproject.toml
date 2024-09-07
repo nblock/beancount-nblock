@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beancount-nblock"
+dynamic = ["version"]
+description = "A collection of beancount plugins"
+readme = "README.md"
+authors = [
+  {name = "Florian Preinstorfer", email = "nblock@archlinux.us"},
+]
+requires-python = ">=3.10"
+dependencies = [
+  "beancount>=2,<3",
+]
+
+[project.urls]
+Repository = "https://github.com/nblock/beancount-nblock"
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-randomly",
+]
+
+# setuptools_scm
+[tool.setuptools_scm]
