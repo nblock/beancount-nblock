@@ -25,6 +25,13 @@ test = [
   "pytest-randomly",
 ]
 
+# basedpyright
+[tool.basedpyright]
+include = ["src", "tests"]
+ignore = ["tests"]
+reportAny = false
+reportUnusedCallResult = false
+
 # coverage: paths
 [tool.coverage.paths]
 source = [
