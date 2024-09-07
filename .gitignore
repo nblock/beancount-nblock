@@ -1,8 +1,9 @@
-.python-version
-*.pyc
-.cache
-.tox
-.coverage
 *.egg-info
-htmlcov
+*.pyc
 .pytest_cache
+.python-version
+/.cache/
+/.coverage
+/.tox/
+/build/
+/htmlcov/
