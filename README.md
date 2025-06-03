@@ -54,3 +54,26 @@ plugin "beancount_nblock.repel" "PLUGIN CONFIGURATION"
 where `PLUGIN CONFIGURATION` is a list of tag/account tuples such as `"[('FOO',
 'Assets:Checking')]"`. The tag `FOO` should not occur in the same transaction as
 the account `Assets:Checking`.
+
+## file_ordering: enforces strict date ordering within individual Beancount files
+This Beancount plugin validates that each Beancount file that contains 2 or more
+transactions is strictly chronologically ordered. I.e., no transaction that
+occurs later in a given file (in file order) has a date that occurs earlier (in
+calendar order) than a previous transaction in the same file.
+
+While Beancount by default doesn't care about file ordering of directives,
+ensuring in-file date ordering on transaction is a useful check to avoid certain
+kinds of booking errors, e.g., copy-pasting an old transaction, forgetting to
+bump its date.
+
+This plugin was developed by Stefano Zacchiroli and released under GNU General
+Public License (GPL), version 2 or above. It was incorporated into this
+repository from <https://github.com/zacchiro/beancount-plugins-zack> at commit
+a86a50bbd7fcc6e202db35dce3ca3af0a504493c to simplify distribution and
+installation via pip.
+
+### Usage
+Add the following to your beancount file:
+```
+plugin "beancount_nblock.file_ordering"
+```
