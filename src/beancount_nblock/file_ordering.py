@@ -21,12 +21,10 @@ import collections
 
 from beancount.core.data import filter_txns
 
-__plugins__ = ('validate_file_ordering',)
+__plugins__ = ("validate_file_ordering",)
 
 
-FileOrderingError = collections.namedtuple(
-    'FileOrderingError',
-    'source message entry')
+FileOrderingError = collections.namedtuple("FileOrderingError", "source message entry")
 
 
 def txns_by_file(entries):
@@ -42,16 +40,16 @@ def txns_by_file(entries):
     file_entries = {}  # return dict
 
     for entry in filter_txns(entries):  # group by file
-        if 'filename' not in entry.meta:
+        if "filename" not in entry.meta:
             continue
-        filename = entry.meta['filename']
+        filename = entry.meta["filename"]
 
         if filename not in file_entries:
             file_entries[filename] = []
         file_entries[filename].append(entry)
 
     for filename in file_entries:  # sort by line number
-        file_entries[filename].sort(key=lambda e: e.meta['lineno'])
+        file_entries[filename].sort(key=lambda e: e.meta["lineno"])
 
     return file_entries
 
@@ -71,11 +69,13 @@ def validate_date_ordering(entries):
 
     for entry in entries:
         if prev_date and entry.date < prev_date:
-            errors.append(FileOrderingError(
-                entry.meta,
-                'Date {} occurs after {}, violating in-file date ordering'
-                .format(entry.date, prev_date),
-                entry))
+            errors.append(
+                FileOrderingError(
+                    entry.meta,
+                    f"Date {entry.date} occurs after {prev_date}, violating in-file date ordering",
+                    entry,
+                )
+            )
 
         prev_date = entry.date
 
