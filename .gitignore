@@ -6,4 +6,5 @@
 /.coverage
 /.tox/
 /build/
+/dist/
 /htmlcov/
