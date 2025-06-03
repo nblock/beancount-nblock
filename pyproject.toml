@@ -10,6 +10,8 @@ readme = "README.md"
 authors = [
   {name = "Florian Preinstorfer", email = "site-github@nblock.org"},
 ]
+license = "GPL-2.0-or-later"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = [
   "beancount>=2,<3",
