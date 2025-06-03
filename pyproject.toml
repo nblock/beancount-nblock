@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "A collection of beancount plugins"
 readme = "README.md"
 authors = [
-  {name = "Florian Preinstorfer", email = "nblock@archlinux.us"},
+  {name = "Florian Preinstorfer", email = "site-github@nblock.org"},
 ]
 requires-python = ">=3.11"
 dependencies = [
