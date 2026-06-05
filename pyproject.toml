@@ -12,7 +12,7 @@ authors = [
 ]
 license = "GPL-2.0-or-later"
 license-files = ["LICENSE"]
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = [
   "beancount",
 ]
